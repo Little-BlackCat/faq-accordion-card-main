@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(0deg, hsl(240, 73%, 65%), hsl(273, 75%, 66%));
+  background-repeat: no-repeat;
+}
+
+.container {
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+  height: 450px;
+  background: #FFF;
+  border-radius: 20px;
+  padding: 6rem 0rem 6rem 8rem;
+  background-position: left -15% top 50%;
+  background-repeat: no-repeat;
+  background-size: 450px;
+  background-image: url("./images/illustration-woman-online-desktop.svg"), url("./images/bg-pattern-desktop.svg");
+}
+
+.img {
+  position: relative;
+}
+
+.box {
+  position: absolute;
+  top: 60px;
+  left: -230px;
+}
+.woman {
+  /* position: relative; */
+  width: 410px;
+
+}
+
+.content {
+  position: relative;
+  left: -60px;
+  bottom: 30px;
+}
+
+.title {
+  font-size: 20px;
+}
+
+.questions {
+  margin: 0;
+  padding-top: 2rem;
+  width: 350px;
+}
+
+details {
+  margin: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  width: inherit;
+
+}
+
+summary {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  width: inherit;
+  &:hover {
+    color: orangered;
+  }
+
+}
+
+/* the rest is just for esthetics */
+
+summary::after {
+  /* margin-left: 1ch; */
+  display: inline-block;
+  content: url('./images/icon-arrow-down.svg');
+  transition: 0.2s;
+}
+
+details[open] summary::after {
+  transform: rotate(-180deg);
+}
+
+details[open] summary:focus {
+  font-weight: bold;
+}
+
+details p {
+  margin-top: 0.5rem;
+  color: hsl(240, 6%, 50%);
+  width: inherit;
+
+}
+hr {
+  margin: 1rem 0;
+  width: inherit;
+}
+
+.woman img{
+  display: none;
+}
+
+@media screen and (max-width: 540px) {
+  .container {
+    flex-direction: column;
+    background-image: none;
+    margin: 0 4rem;
+    max-width: 350px;
+    padding: 0 1rem;
+    align-items: center;
+    position: relative;
+  }
+  .img .box {
+    display: none;
+  }
+
+  .woman img {
+    display: block;
+    width: 180px;
+    position: absolute;
+    top: -75px;
+    left: 120px;
+  }
+  
+  .content{
+    margin: 6rem;
+    position: static;
+  }
+
+  .content h1 {
+    text-align: center;
+  }
+  
+  .questions {
+    max-width: 280px;
+  }
+
+  details, summary, p, hr {
+    width: 100%;
+  }
+  p {
+    padding-right: 1rem;
+  }
+
+}
